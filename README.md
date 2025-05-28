@@ -85,7 +85,7 @@ graph TD
         end
     end
     
-    Commands -->|"create_plan()\nadd_training_block()\nschedule_workout()..."| TrainingPlan
+    Commands -->|"create_plan() add_training_block() schedule_workout()..."| TrainingPlan
     TrainingPlan -->|"creates"| Event
     Event -->|"_apply_event()"| TrainingPlan
     TrainingPlan -->|"uncommitted_events"| Save
@@ -95,7 +95,4 @@ graph TD
     Get -->|"get_events(id)"| EventStore
     AggregateIndex -->|"return events"| Get
     Get -->|"from_events(id, events)"| TrainingPlan
-    
-    style Event fill:#ffcccc
-    style TrainingPlan fill:#ccffcc
-    style EventStore fill:#ccccff
+```
